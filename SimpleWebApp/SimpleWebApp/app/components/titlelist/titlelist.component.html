@@ -1,0 +1,34 @@
+﻿<form>
+    <!--<div class="leftcontainer borderedboxlight">
+        <div class="addcontentlist">
+            <i class="glyphicon glyphicon-plus" (click)="addlist(newlistctrl)"></i>
+            <input type="text" [(ngModel)]="newlist" class="form-control" ngControl="newlistctrl" required #newlistctrl="ngForm" />
+        </div>
+        <div class="list-group" *ngIf="titleList">
+            <a href="#" (click)="SelectedList=listitem" class="list-group-item listwrapper" [class.active]="SelectedList && listitem.Id==SelectedList.Id" *ngFor="let listitem of titleList">
+                <div class="listitemwrapper">
+                    <div>{{listitem.Name}}</div>
+                    <div class="actionbtn text-danger" (click)="removelist(listitem)"><i class="glyphicon glyphicon-remove"></i></div>
+                </div>
+                <span class="badge">{{listitem.CountEnded}}/{{listitem.Count}}</span>
+            </a>
+        </div>
+    </div>-->
+    <div class="centercontainer borderedboxlight">
+        <ul class="list-group" *ngIf="titleList">
+            <li class="list-group-item addcontent">
+                <i class="glyphicon glyphicon-plus" (click)="addtask(newtaskctrl)" [ngClass]="{'actionenable' : true}"></i>
+                <input type="text" [(ngModel)]="newtask" class="form-control" ngControl="newtaskctrl" required #newtaskctrl="ngForm"/>
+            </li>
+            <li class="list-group-item" *ngFor="let task of selectedtasks">
+                <div class="taskwrapper">
+                    <!--<i class="checkicon glyphicon" [ngClass]="{'glyphicon-check' : task.Ended, 'glyphicon-unchecked' : !task.Ended}" (click)="checktask(task)"></i>-->
+                    <div>
+                        {{task.Name}}
+                    </div>
+                    <!--<div class="actionbtn text-danger" (click)="removetask(task)"><i class="glyphicon glyphicon-remove"></i></div>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>
