@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApi", "SimpleWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApp", "SimpleWebApp\SimpleWebApp\SimpleWebApp.csproj", "{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebAppAngular1", "SimpleWebAppAngular1\SimpleWebAppAngular1.csproj", "{EE20190B-CE57-4593-8726-AF053CB6F151}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebAppAngular1", "SimpleWebApp\SimpleWebAppAngular1\SimpleWebAppAngular1.csproj", "{EE20190B-CE57-4593-8726-AF053CB6F151}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

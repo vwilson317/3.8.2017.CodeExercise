@@ -1,0 +1,95 @@
+﻿<div [@dialog] *ngIf="visible" class="dialog">
+    <ng-content></ng-content>
+    <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>
+
+<!--<md-dialog class="bank-modal">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <!--<h2>{{vm.detail.info.bankName}} ({{vm.detail.info.codeName}})</h2>
+                <h2>Title detail modal</h2>
+                <span flex></span>
+                <md-button class="md-icon-button">
+                    <i class="material-icons">close</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-click="vm.cancel()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab>
+                    Tab
+                </md-tab>
+                <!--
+                <md-tab ng-repeat="uiInfo in vm.detail.uiInfo" label="{{uiInfo.uiPlatformType}}">
+                    <md-content class="bank-modal-offerTypes">
+                        <label>Offer Types: </label>
+                        <i class="material-icons" ng-if="uiInfo.hasGeo || vm.editMode"
+                           ng-class="{'disabled-icon': !uiInfo.hasGeo, 'edit-mode':vm.editMode}"
+                           ng-click="vm.toggleOfferType('geo',uiInfo)">
+                            <md-tooltip md-direction="bottom">Geo Offers</md-tooltip>
+                            public
+                        </i>
+                        <i class="material-icons" ng-if="uiInfo.hasMobile || vm.editMode"
+                           ng-class="{'disabled-icon': !uiInfo.hasMobile, 'edit-mode':vm.editMode}"
+                           ng-click="vm.toggleOfferType('mobile',uiInfo)">
+                            <md-tooltip md-direction="bottom">Mobile Offers</md-tooltip>
+                            smartphone
+                        </i>
+                        <i class="material-icons" ng-if="uiInfo.hasInlineOffers || vm.editMode"
+                           ng-class="{'disabled-icon': !uiInfo.hasInlineOffers, 'edit-mode':vm.editMode}"
+                           ng-click="vm.toggleOfferType('inline',uiInfo)">
+                            <md-tooltip md-direction="bottom">Inline Offers</md-tooltip>
+                            drag_handle
+                        </i>
+                        <i class="material-icons" ng-if="uiInfo.isTiledFlag || vm.editMode"
+                           ng-class="{'disabled-icon': !uiInfo.isTiledFlag, 'edit-mode':vm.editMode}"
+                           ng-click="vm.toggleOfferType('tiled',uiInfo)">
+                            <md-tooltip md-direction="bottom">Tiled Offers</md-tooltip>
+                            view_comfy
+                        </i>
+                    </md-content>
+                    <!--<md-content class="md-padding" layout="row" flex>
+                        <md-content layout="row" layout-align="center center" class="bank-modal-input-containers" flex>
+                            <md-input-container flex="80">
+                                <label>Number of Account Overview Offers</label>
+                                <input type="number" ng-model="uiInfo.accountOverviewWidgetLogos" ng-disabled="!vm.editMode">
+                            </md-input-container>
+                        </md-content>
+
+                        <md-content layout="row" layout-align="center center" class="bank-modal-input-containers" flex>
+                            <md-input-container flex="80">
+                                <label>Account Detail Offers</label>
+                                <input type="number" ng-model="uiInfo.accountDetailsWidgetLogos" ng-disabled="!vm.editMode">
+                            </md-input-container>
+                        </md-content>
+
+                        <md-content layout="row" layout-align="center center" class="bank-modal-input-containers" flex>
+                            <md-input-container flex="80">
+                                <label>Columns in Reward Summary</label>
+                                <input type="number" ng-model="uiInfo.columnsInRewardSummary" ng-disabled="!vm.editMode">
+                            </md-input-container>
+                        </md-content>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-primary">
+            <!--<md-button class="md-primary" ng-click="vm.onSave()" ng-show="vm.editMode">
+                Save
+            </md-button>
+            <md-button class="md-primary" ng-click="vm.enableEdit()" ng-show="!vm.editMode">
+                Edit
+            </md-button>
+            <md-button class="md-primary" ng-click="vm.hide()">
+                OK
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>-->

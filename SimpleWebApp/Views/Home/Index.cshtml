@@ -1,0 +1,20 @@
+﻿@section scripts{
+    @Html.Partial("DefineAngular")
+    <script>
+        System.import('app/boottitlelist');
+    </script>
+}
+@*<md-container class="search-box" layout="row">
+    <div flex="5" layout="column" layout-align="center end">
+        <i class="material-icons">search</i>
+    </div>
+    <md-input-container flex>
+        <label>Search</label>
+        <input [(ngModel)]="search" class="form-control" ngControl="newtaskctrl" required #newtaskctrl="ngForm">
+    </md-input-container>
+</md-container>*@
+<title-list class="titlelistcontent">
+    <div class="waitloading">
+        loading...
+    </div>
+</title-list>

@@ -1,0 +1,30 @@
+﻿/* DETAIL MODAL CSS */
+.detail-modal {
+    min-width: 60%;
+}
+
+.detail-modal-input-containers {
+    padding-top: 30px;
+}
+
+.detail-modal-input-containers input:disabled {
+    color: rgba(0,0,0,.6);
+}
+
+.detail-modal-offerTypes {
+    padding-left: 30px;
+    padding-top: 12px;
+}
+
+.detail-modal-offerTypes i{
+    vertical-align: middle;
+    cursor: default;
+}
+
+.detail-modal-offerTypes .disabled-icon {
+    color: lightgray;
+}
+
+.detail-modal-offerTypes label{
+    padding-right: 4px;
+}

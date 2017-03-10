@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApi", "SimpleWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C42C3F70-4859-471E-8954-B1AE983CE19D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebAppAngular1", "SimpleWebAppAngular1\SimpleWebAppAngular1.csproj", "{EE20190B-CE57-4593-8726-AF053CB6F151}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C42C3F70-4859-471E-8954-B1AE983CE19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42C3F70-4859-471E-8954-B1AE983CE19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42C3F70-4859-471E-8954-B1AE983CE19D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE20190B-CE57-4593-8726-AF053CB6F151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE20190B-CE57-4593-8726-AF053CB6F151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE20190B-CE57-4593-8726-AF053CB6F151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE20190B-CE57-4593-8726-AF053CB6F151}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
