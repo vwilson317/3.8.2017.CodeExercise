@@ -162,8 +162,10 @@
   <ItemGroup>
     <Compile Include="App_Start\DependencyLoader.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AwardsResource.cs" />
     <Compile Include="Controllers\MappingProfile.cs" />
     <Compile Include="Controllers\TitleController.cs" />
+    <Compile Include="Controllers\TitleResource.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

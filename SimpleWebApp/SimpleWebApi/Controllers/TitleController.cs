@@ -28,9 +28,4 @@ namespace SimpleWebApi.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, resources);
         }
     }
-
-    public class TitleResource
-    {
-        public string TitleName { get; set; }
-    }
 }

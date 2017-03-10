@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using Newtonsoft.Json.Serialization;
 
 namespace SimpleWebApi.App_Start
 {
@@ -8,9 +9,11 @@ namespace SimpleWebApi.App_Start
     {
         public static void Configure(HttpConfiguration config)
         {
-            // New code
             var cors = new EnableCorsAttribute("*","*","*");
             config.EnableCors(cors);
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
 
             config.MapHttpAttributeRoutes();
 

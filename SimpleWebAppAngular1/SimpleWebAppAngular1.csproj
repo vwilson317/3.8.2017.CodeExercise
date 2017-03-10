@@ -199,16 +199,12 @@
     <Content Include="Content\app\controllers\app-controller.js" />
     <Content Include="Content\app\controllers\home-controller.js" />
     <Content Include="Content\app\controllers\detail-modal-controller.js" />
-    <Content Include="Content\app\resources\insitutionDetailResource.js" />
-    <Content Include="Content\app\resources\InsitutionUIInfoResource.js" />
     <Content Include="Content\app\resources\titleResource.js" />
-    <Content Include="Content\app\views\bankModal.html" />
+    <Content Include="Content\app\views\detailModal.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\cl-app-logo.png" />
-    <Content Include="Content\logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -275,22 +271,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InstitutionDetailsController.cs" />
-    <Compile Include="DataAccessBase.cs" />
-    <Compile Include="EnumType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="IDataAccess.cs" />
-    <Compile Include="IInstitutionDetails.cs" />
-    <Compile Include="IInstitutionUIInfo.cs" />
-    <Compile Include="InstitutionDetails.cs" />
-    <Compile Include="InstitutionDetailsDataAccess.cs" />
-    <Compile Include="InstitutionDetailsMapper.cs" />
-    <Compile Include="InstitutionInfo.cs" />
-    <Compile Include="InstitutionInfoDataAccess.cs" />
-    <Compile Include="InstitutionUIInfoTable.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

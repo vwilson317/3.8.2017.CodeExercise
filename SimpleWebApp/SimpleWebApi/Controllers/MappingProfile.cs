@@ -8,6 +8,7 @@ namespace SimpleWebApi.Controllers
         public MappingProfile()
         {
             CreateMap<Title, TitleResource>();
+            CreateMap<Award, AwardsResource>();
         }
     }
 }

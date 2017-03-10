@@ -51,14 +51,6 @@ textarea {
     margin-right: auto;
 }
 
-.cl-app-logo {
-    width: 80px;
-    height: 80px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 22px;
-}
-
 /* MAIN TABLE AND SEARCH */
 .search-box {
     padding-top: 10px;
@@ -73,20 +65,15 @@ table.md-table tr:first-child td.md-cell {
     border-top: 1px rgb(255,64,129) solid;
 }
 
-/*#main-content .md-ink-bar {
-    color: rgb(255,64,129);
-    background: rgb(255,64,129);
-}*/
-
-.bank-table-container {
+.title-detail-table-container {
     width: 95%;
 }
 
-.bank-name-column {
+.name-column {
     margin: 0 !important;
 }
 
-.bank-name-column span {
+.name-column span {
     text-transform: none;
     color: #0168BC;
 }
@@ -95,7 +82,7 @@ table.md-table tr:first-child td.md-cell {
     cursor: default;
 }
 
-/* BANK MODAL CSS */
+/* DETAIL MODAL CSS */
 .detail-modal {
     min-width: 60%;
 }

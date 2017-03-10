@@ -20,7 +20,6 @@ namespace DataAccess
         public bool IsKey { get; set; }
         public string RoleType { get; set; }
         public bool IsOnScreen { get; set; }
-    
         public virtual Participant Participant { get; set; }
         public virtual Title Title { get; set; }
     }

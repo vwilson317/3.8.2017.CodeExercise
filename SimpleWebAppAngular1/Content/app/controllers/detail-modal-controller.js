@@ -2,22 +2,18 @@
     angular.module('app')
     .controller('DetailModalController',
         [
-            '$scope', '$mdDialog', 'selectedItem',
+            '$scope', '$mdDialog', 'selectedTitle', 'awardsWon',
             DetailModalController
         ]);
 
-    function DetailModalController($scope, $mdDialog, selectedItem) {
+    function DetailModalController($scope, $mdDialog, selectedTitle, awardsWon) {
         var vm = this;
 
-        vm.selectedItem = selectedItem;
+        vm.selectedTitle = selectedTitle;
+        vm.awardsWon = awardsWon;
 
         vm.hide = hide;
         vm.cancel = cancel;
-        vm.onSave = onSave;
-
-        activate();
-
-        ////////////////
 
         function hide() {
             $mdDialog.hide();

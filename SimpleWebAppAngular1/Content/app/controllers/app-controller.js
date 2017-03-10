@@ -2,16 +2,16 @@
     angular.module('app')
     .controller('AppController',
         [
-            '$scope', 'institutionDetailResource', 'titleResource', '$mdSidenav', '$log', '$timeout', '$q', '$mdDialog', '$mdMedia',
+            '$scope', 'titleResource', '$log', '$timeout', '$q', '$mdDialog',
             AppController 
         ]);
 
-    function AppController($scope, institutionDetailsResource, titleResource, $mdSidenav, $log, $timeout, $q, $mdDialog, $mdMedia) {
+    function AppController($scope, titleResource, $log, $timeout, $q, $mdDialog) {
         var vm = this;
 
         vm.search = '';
         vm.query = {
-            order: 'info.bankName',
+            order: 'title.titleName',
             limit: 5,
             page: 1
         };
@@ -21,14 +21,8 @@
         vm.querySearch = querySearch;
         vm.selectedItemChange = selectedItemChange;
         vm.searchTextChange = searchTextChange;
-        vm.onBankNameClick = onBankNameClick;
-
-        institutionDetailsResource.query(function (data) {
-            vm.institutionDetails = data;
-            vm.selectedInstitution = vm.institutionDetails[0];
-        }, function () {
-            console.log('Failed to get institution details');
-        });
+        vm.onNameClick = onNameClick;
+        vm.getWonAwardCount = getWonAwardCount;
 
         titleResource.query(function(data) {
             vm.titles = data;
@@ -36,16 +30,8 @@
             console.log(message);
         });
 
-        function toggleSideBar() {
-            $mdSidenav('left').toggle();
-        }
-
-        $scope.selectInstitution = function(institution) {
-            vm.selectedInstitution = angular.isNumber(institution) ? vm.institutionDetails[institution] : institution;
-        }
-
         function querySearch(query) {
-            var results = query ? vm.institutionDetails.filter(createFilterFor(query)) : vm.institutionDetails,
+            var results = query ? vm.titles.filter(createFilterFor(query)) : vm.titles,
                 deferred;
             if (vm.simulateQuery) {
                 deferred = $q.defer();
@@ -66,27 +52,31 @@
 
         function createFilterFor(query) {
             var lowercaseQuery = angular.lowercase(query);
-            return function filterFn(institutionDetail) {
-                return (institutionDetail.info.bankName.toLowerCase().indexOf(lowercaseQuery) === 0 ||
-                    institutionDetail.info.codeName.toLowerCase().indexOf(lowercaseQuery) === 0 ||
-                    institutionDetail.info.version.indexOf(lowercaseQuery) === 0 ||
-                    institutionDetail.info.institutionId.toString() === lowercaseQuery);
+            return function filterFn(currentTitle) {
+                return (currentTitle.awardName1.toLowerCase().indexOf(lowercaseQuery) === 0);
             };
         }
 
-        function onBankNameClick(event, selectedItem) {
-            var showFullscreen = $mdMedia('xs') || $mdMedia('sm');
-
+        function onNameClick(event, selectedTitle) {
+            var awardsWon = getWonAwards(selectedTitle.awards);
             $mdDialog.show({
                 controller: 'DetailModalController',
                 controllerAs: 'vm',
-                locals: { selectedItem: selectedItem },
-                templateUrl: 'Content/app/views/bankModal.html',
+                locals: { selectedTitle: selectedTitle, awardsWon: awardsWon },
+                templateUrl: 'Content/app/views/detailModal.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
-                clickOutsideToClose: true,
-                fullscreen: showFullscreen
+                clickOutsideToClose: true
             });
+        }
+
+        function getWonAwards(awards) {
+            return _.where(awards, { awardWon: true });
+        }
+
+        function getWonAwardCount(awards) {
+            var awardsWon = getWonAwards(awards);
+            return awardsWon.length;
         }
     }
 })();
