@@ -16,7 +16,6 @@ export class TitleListComponent {
     ngOnInit() {
         this._appService.getAll
             .subscribe(data => {
-                    debugger;
                     this._titles = data;
                 },
                 error => console.log(error),
@@ -24,7 +23,6 @@ export class TitleListComponent {
     }
 
     get titles(): any[] {
-        debugger;
         return this._titles;
     }
 

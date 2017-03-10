@@ -25,7 +25,10 @@ namespace SimpleWebApp
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/angular-material.min.css",
+                      "~/Content/angular-material.layouts.min.css",
+                      "~/Content/angular-material.layout-attributes.min.css"));
         }
     }
 }

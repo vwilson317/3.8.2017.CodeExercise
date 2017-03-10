@@ -6,24 +6,30 @@
     <title>Simple Web App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div>
-            <a href="@Url.Action("Index", "Home")">
-                <i class="glyphicon glyphicon-tasks"></i>&nbsp;Title search
-            </a>
-        </div>
+        <md-toolbar class="md-warn">
+            <span class="section-title">Title search</span>
+        </md-toolbar>
         <div class="title">
             @RenderSection("title", required: false)
         </div>
         <div></div>
     </header>
+    <form id="search-form" action="../search.html" method="GET" _lpchecked="1">
+        <div class="search-widget qp-ui qp-ui-search-input" data-qp-ui="{ 'SearchInput': {} }" data-qp-ui-data-id="qp:3">
+            <button class="search-button"><i class="material-icons">search</i></button>
+            <button class="search-close-button"><i class="material-icons">close</i></button>
+            <input name="q" type="text" id="search-input" autocomplete="off">
+            <label for="search-input">Search</label>
+        </div>
+    </form>
     <main>
         @RenderBody()
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

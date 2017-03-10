@@ -1,21 +1,10 @@
 ﻿<form>
-    <!--<div class="leftcontainer borderedboxlight">
-        <div class="addcontentlist">
-            <i class="glyphicon glyphicon-plus" (click)="addlist(newlistctrl)"></i>
-            <input type="text" [(ngModel)]="newlist" class="form-control" ngControl="newlistctrl" required #newlistctrl="ngForm" />
-        </div>
-        <div class="list-group" *ngIf="titleList">
-            <a href="#" (click)="SelectedList=listitem" class="list-group-item listwrapper" [class.active]="SelectedList && listitem.Id==SelectedList.Id" *ngFor="let listitem of titleList">
-                <div class="listitemwrapper">
-                    <div>{{listitem.Name}}</div>
-                    <div class="actionbtn text-danger" (click)="removelist(listitem)"><i class="glyphicon glyphicon-remove"></i></div>
-                </div>
-                <span class="badge">{{listitem.CountEnded}}/{{listitem.Count}}</span>
-            </a>
-        </div>
-    </div>-->
     <div class="centercontainer borderedboxlight">
         <ul *ngIf="titles">
+            <li class="list-group-item addcontent">
+                <!--<i class="glyphicon glyphicon-plus" (click)="addtask(newtaskctrl)" [ngClass]="{'actionenable' : true}"></i>-->
+                <input type="text" [(ngModel)]="newtask" class="form-control" ngControl="newtaskctrl" required #newtaskctrl="ngForm" />
+            </li>
             <li class="list-group-item" *ngFor="let title of titles">
                 <div class="taskwrapper">
                     <div>

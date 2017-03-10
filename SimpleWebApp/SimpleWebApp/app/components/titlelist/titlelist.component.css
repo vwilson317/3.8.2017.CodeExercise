@@ -1,9 +1,4 @@
-﻿.leftcontainer {
-    flex: 1;
-    margin-right: 8px;
-    overflow: auto;
-}
-
+﻿
 .centercontainer {
     flex: 2;
     overflow: auto;
@@ -13,6 +8,10 @@
 
     .centercontainer > .list-group {
         flex: 1;
+    }
+
+    .centercontainer ul {
+        padding: 0;
     }
 
 .showhidetasks {

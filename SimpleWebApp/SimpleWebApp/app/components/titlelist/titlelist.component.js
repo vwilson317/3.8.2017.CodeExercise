@@ -18,13 +18,11 @@ var TitleListComponent = (function () {
         var _this = this;
         this._appService.getAll
             .subscribe(function (data) {
-            debugger;
             _this._titles = data;
         }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
     };
     Object.defineProperty(TitleListComponent.prototype, "titles", {
         get: function () {
-            debugger;
             return this._titles;
         },
         enumerable: true,

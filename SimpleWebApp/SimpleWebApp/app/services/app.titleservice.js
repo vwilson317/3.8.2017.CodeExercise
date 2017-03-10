@@ -13,17 +13,8 @@ var http_1 = require('@angular/http');
 require('rxjs/Rx');
 var TitleService = (function () {
     function TitleService(http) {
-        //super(_http);
-        //this.getaction<Models.List[]>(this._getTitleListUrl).subscribe(
-        //    result => {
-        //        this._titleList = result;
         this.http = http;
         this._actionUrl = 'http://localhost:58949/api/title';
-        //        if (this._titleList.length > 0) {
-        //            this.SelectedList = this._titleList[0];
-        //        }
-        //    },
-        //    error => console.error(error));
     }
     Object.defineProperty(TitleService.prototype, "getAll", {
         get: function () {
@@ -32,21 +23,6 @@ var TitleService = (function () {
                 return m.json();
             })
                 .do(function (x) { return console.log(x); });
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TitleService.prototype, "titleList", {
-        get: function () {
-            if (this._titleList) {
-                this._titleList.map(function (m) {
-                    if (m.Tasks) {
-                        m.Count = m.Tasks.length;
-                        m.CountEnded = m.Tasks.filter(function (f) { return f.Ended; }).length;
-                    }
-                });
-            }
-            return this._titleList;
         },
         enumerable: true,
         configurable: true
