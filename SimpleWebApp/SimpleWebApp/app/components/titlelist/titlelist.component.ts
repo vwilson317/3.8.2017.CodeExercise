@@ -3,33 +3,33 @@ import {NgControl} from '@angular/common';
 import {TitleService} from '../../services/app.titleservice';
 
 @Component({
-    selector: 'titleList',
+    selector: 'title-list',
     templateUrl: './app/components/titlelist/titlelist.component.html',
     styleUrls: ['./app/components/titlelist/titlelist.component.css']
 })
 export class TitleListComponent {
+    private  _titles: any[];
     constructor(private _appService: TitleService) {
+
     }
 
-    get titleList(): Models.List[] {
-        return this._appService.titleList;
+    ngOnInit() {
+        this._appService.getAll
+            .subscribe(data => {
+                    debugger;
+                    this._titles = data;
+                },
+                error => console.log(error),
+                () => console.log('Get all complete'));
     }
 
-    get SelectedList(): Models.List {
-        return this._appService.SelectedList;
+    get titles(): any[] {
+        debugger;
+        return this._titles;
     }
 
-    set SelectedList(value: Models.List) {
-        this._appService.SelectedList = value;
-    }
+    //get titleList(): Models.List[] {
+    //    return this._appService.titleList;
+    //}
 
-    get selectedtasks(): Models.Task[] {
-        if (this.SelectedList && this.SelectedList.Tasks) {
-            return this.SelectedList.Tasks.filter(f => !f.Ended && !this.showendedtask || this.showendedtask);
-        }
-    }
-
-    newtask: string;
-    newlist: string;
-    showendedtask: boolean = true;
 }

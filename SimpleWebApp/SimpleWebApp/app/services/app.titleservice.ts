@@ -5,24 +5,30 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Injectable()
-export class TitleService extends HttpHelpers {
-
-    private _getTitleListUrl = 'Home/GetTitleList';
+export class TitleService {//extends HttpHelpers {
+    private _actionUrl = 'http://localhost:58949/api/title';
 
     private _titleList: Models.List[];
 
     constructor(private http: Http) {
-        super(http);
+        //super(_http);
+        //this.getaction<Models.List[]>(this._getTitleListUrl).subscribe(
+        //    result => {
+        //        this._titleList = result;
 
-        this.getaction<Models.List[]>(this._getTitleListUrl).subscribe(
-            result => {
-                this._titleList = result;
+        //        if (this._titleList.length > 0) {
+        //            this.SelectedList = this._titleList[0];
+        //        }
+        //    },
+        //    error => console.error(error));
+    }
 
-                if (this._titleList.length > 0) {
-                    this.SelectedList = this._titleList[0];
-                }
-            },
-            error => console.error(error));
+    get getAll(): Observable<any> {
+        return this.http.get(this._actionUrl)
+            .map(m => {
+                return m.json();
+            })
+            .do (x => console.log(x));
     }
 
     get titleList(): Models.List[] {
@@ -37,6 +43,4 @@ export class TitleService extends HttpHelpers {
 
         return this._titleList;
     }
-
-    SelectedList: Models.List;
 }

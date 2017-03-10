@@ -25,11 +25,10 @@ namespace SimpleWebApi.Controllers
         public HttpResponseMessage Get()
         {
             var data = _repository.Entity<Title>();
-            var list = data.Select(x => x).ToList();
-            var resources = list.Select(y => _mapper.Map<TitleResource>(y)).ToList();
+            var entities = data.Select(x => x).ToList();
+            var resources = entities.Select(_mapper.Map<TitleResource>).ToList();
 
-            var jsonResponse = JsonConvert.SerializeObject(resources);
-            return Request.CreateResponse(HttpStatusCode.Accepted, jsonResponse);
+            return Request.CreateResponse(HttpStatusCode.Accepted, resources);
         }
     }
 

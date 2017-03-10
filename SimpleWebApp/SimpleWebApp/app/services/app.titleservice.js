@@ -1,9 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -15,22 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var HttpHelpers_1 = require('../utils/HttpHelpers');
 require('rxjs/Rx');
-var TitleService = (function (_super) {
-    __extends(TitleService, _super);
+var TitleService = (function () {
     function TitleService(http) {
-        var _this = this;
-        _super.call(this, http);
+        //super(_http);
+        //this.getaction<Models.List[]>(this._getTitleListUrl).subscribe(
+        //    result => {
+        //        this._titleList = result;
         this.http = http;
-        this._getTitleListUrl = 'Home/GetTitleList';
-        this.getaction(this._getTitleListUrl).subscribe(function (result) {
-            _this._titleList = result;
-            if (_this._titleList.length > 0) {
-                _this.SelectedList = _this._titleList[0];
-            }
-        }, function (error) { return console.error(error); });
+        this._actionUrl = 'http://localhost:58949/api/title';
+        //        if (this._titleList.length > 0) {
+        //            this.SelectedList = this._titleList[0];
+        //        }
+        //    },
+        //    error => console.error(error));
     }
+    Object.defineProperty(TitleService.prototype, "getAll", {
+        get: function () {
+            return this.http.get(this._actionUrl)
+                .map(function (m) {
+                return m.json();
+            })
+                .do(function (x) { return console.log(x); });
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(TitleService.prototype, "titleList", {
         get: function () {
             if (this._titleList) {
@@ -51,6 +56,6 @@ var TitleService = (function (_super) {
         __metadata('design:paramtypes', [http_1.Http])
     ], TitleService);
     return TitleService;
-}(HttpHelpers_1.HttpHelpers));
+}());
 exports.TitleService = TitleService;
 //# sourceMappingURL=app.titleservice.js.map
