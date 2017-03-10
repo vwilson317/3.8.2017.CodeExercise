@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<md-container class="search-box" layout="row">
+    <div flex="5" layout="column" layout-align="center end">
+        <i class="material-icons">search</i>
+    </div>
+    <md-input-container flex>
+        <label>Search</label>
+        <input ng-model="vm.search">
+    </md-input-container>
+</md-container>
+<md-content class="content-table" layout="row" layout-align="center center">
+    <md-table-container class="bank-table-container">
+        <table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.onReorder">
+                <tr md-row>
+                    <th md-column md-order-by="info.bankName">Name</th>
+                    @*<th md-column md-numeric>Offer Types</th>*@
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row md-select="institution" md-select-id="{{institution.id}}" md-auto-select
+                    ng-repeat="title in vm.titles | filter: vm.search | orderBy: vm.query.order">
+                    <td md-cell>
+                        <md-button class="bank-name-column" ng-click="vm.onBankNameClick($event, title)">{{title.TitleName}}</md-button>
+                    </td>
+                    @*<td md-cell>{{detail.info.institutionId | number}}</td>
+                    <td md-cell>{{detail.info.codeName}}</td>
+                    <td md-cell>{{detail.info.version}}</td>*@
+            </tbody>
+        </table>
+
+        @*<table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.onReorder">
+                <tr md-row>
+                    <th md-column md-order-by="info.bankName">Name</th>
+                    <th md-column md-numeric md-order-by="info.institutionId">Institution Id</th>
+                    <th md-column md-numeric md-order-by="info.codeName">Code Name</th>
+                    <th md-column md-numeric md-order-by="info.version">Version</th>
+                    @*<th md-column md-numeric>Offer Types</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row md-select="institution" md-select-id="{{institution.id}}" md-auto-select
+                    ng-repeat="detail in vm.institutionDetails | filter: vm.search | orderBy: vm.query.order">
+                    <td md-cell>
+                        <md-button class="bank-name-column" ng-click="vm.onBankNameClick($event, detail)">{{detail.info.bankName}}</md-button>
+                    </td>
+                    <td md-cell>{{detail.info.institutionId | number}}</td>
+                    <td md-cell>{{detail.info.codeName}}</td>
+                    <td md-cell>{{detail.info.version}}</td>
+                    @*<td md-cell class="offer-type-column">
+                            <i class="material-icons" ng-if="detail.uiInfo[0].hasGeo">
+                                <md-tooltip md-direction="bottom">Geo Offers</md-tooltip>
+                                public
+                            </i>
+                            <i class="material-icons" ng-if="detail.uiInfo[0].hasMobile">
+                                <md-tooltip md-direction="bottom">Mobile Offers</md-tooltip>
+                                smartphone
+                            </i>
+                            <i class="material-icons" ng-if="detail.uiInfo[0].hasInlineOffers">
+                                <md-tooltip md-direction="bottom">Inline Offers</md-tooltip>
+                                drag_handle
+                            </i>
+                            <i class="material-icons" ng-if="detail.uiInfo[0].isTiledFlag">
+                                <md-tooltip md-direction="bottom">Tiled Offers</md-tooltip>
+                                view_comfy
+                            </i>
+                        </td>
+                </tr>
+            </tbody>
+        </table>*@
+    </md-table-container>
+</md-content>
