@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "SimpleWebApp\DataAccess\DataAccess.csproj", "{C42C3F70-4859-471E-8954-B1AE983CE19D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C42C3F70-4859-471E-8954-B1AE983CE19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApi", "SimpleWebApp\SimpleWebApi\SimpleWebApi.csproj", "{110745E8-6004-46CA-8499-6977998C0408}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApi", "SimpleWebApi\SimpleWebApi.csproj", "{110745E8-6004-46CA-8499-6977998C0408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApp", "SimpleWebApp\SimpleWebApp\SimpleWebApp.csproj", "{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebAppAngular1", "SimpleWebApp\SimpleWebAppAngular1\SimpleWebAppAngular1.csproj", "{EE20190B-CE57-4593-8726-AF053CB6F151}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebAppAngular1", "SimpleWebAppAngular1\SimpleWebAppAngular1.csproj", "{EE20190B-CE57-4593-8726-AF053CB6F151}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{110745E8-6004-46CA-8499-6977998C0408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110745E8-6004-46CA-8499-6977998C0408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110745E8-6004-46CA-8499-6977998C0408}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCDBF716-31D8-4D3E-96F0-13EA00E46CBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE20190B-CE57-4593-8726-AF053CB6F151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE20190B-CE57-4593-8726-AF053CB6F151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE20190B-CE57-4593-8726-AF053CB6F151}.Release|Any CPU.ActiveCfg = Release|Any CPU
