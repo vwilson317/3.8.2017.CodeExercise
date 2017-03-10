@@ -20,15 +20,18 @@ namespace SimpleWebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                "~/Scripts/angular-material.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                "~/node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css",
+                "~/Content/bootstrap.css",
                       "~/Content/angular-material.min.css",
                       "~/Content/angular-material.layouts.min.css",
-                      "~/Content/angular-material.layout-attributes.min.css"));
+                      "~/Content/angular-material.layout-attributes.min.css",
+                       "~/Content/clear-browser-default.css",
+                      "~/Content/site.css"));
         }
     }
 }

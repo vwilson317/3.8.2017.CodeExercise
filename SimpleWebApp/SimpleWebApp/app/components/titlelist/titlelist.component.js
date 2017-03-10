@@ -11,11 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var app_titleservice_1 = require('../../services/app.titleservice');
 var TitleListComponent = (function () {
+    //public showDialog: boolean;
     function TitleListComponent(_appService) {
         this._appService = _appService;
+        this.showdialog = false;
     }
     TitleListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        debugger;
+        //showDialog = false;
         this._appService.getAll
             .subscribe(function (data) {
             _this._titles = data;

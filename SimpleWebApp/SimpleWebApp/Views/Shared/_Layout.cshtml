@@ -1,34 +1,28 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Web App</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <md-toolbar class="md-warn">
-            <span class="section-title">Title search</span>
-        </md-toolbar>
-        <div class="title">
-            @RenderSection("title", required: false)
+<body layout="column">
+
+
+    <md-toolbar class="md-warn row" color="primary">
+        <div class="md-toolbar-tools">
+            <h2>Title search</h2>
         </div>
-        <div></div>
-    </header>
-    <form id="search-form" action="../search.html" method="GET" _lpchecked="1">
-        <div class="search-widget qp-ui qp-ui-search-input" data-qp-ui="{ 'SearchInput': {} }" data-qp-ui-data-id="qp:3">
-            <button class="search-button"><i class="material-icons">search</i></button>
-            <button class="search-close-button"><i class="material-icons">close</i></button>
-            <input name="q" type="text" id="search-input" autocomplete="off">
-            <label for="search-input">Search</label>
-        </div>
-    </form>
-    <main>
+    </md-toolbar>
+    <md-ink-bar></md-ink-bar>
+
+    <div id="main-content" flex layout="column" layout-align="stretch">
         @RenderBody()
-    </main>
+    </div>
     <footer></footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
